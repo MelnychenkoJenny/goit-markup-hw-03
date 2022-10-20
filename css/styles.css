@@ -7,6 +7,7 @@
     --footer-background-color: #2F303A;
     --black-color: #000000;
     --black-opacity-color: rgba(255, 255, 255, 0.6);
+    --background-active-button: #188CE8;
 }
 
 body {
@@ -21,6 +22,8 @@ body {
 }
 
 .list {
+    margin: 0;
+    padding: 0;
     list-style: none;
 }
 
@@ -30,9 +33,34 @@ body {
     font-style: normal;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 1200px;
+}
+
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+img {
+    display: block;
+}
+
 /* logo */
 
 .logo {
+    margin-right: 93px;
+
     color: var(--black-color);
 
     font-family: 'Raleway', sans-serif;
@@ -47,7 +75,24 @@ body {
 
 /* site navigation */
 
+.main-nav,
+.page-nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-nav {
+    display: flex;
+}
+
+.site-nav .item:not(:last-child) {
+    margin-right: 50px;
+}
+
 .site-nav .link {
+    display: block;
+    padding-top: 32px;
+    padding-bottom: 32px;
     color: var(--title-text-color);
 
     font-weight: 500;
@@ -58,15 +103,25 @@ body {
 
 .site-nav .link:hover,
 .site-nav .link:focus,
+.site-nav .link.current,
+.auth-nav .link:hover,
+.auth-nav .link:focus,
 .adress:hover,
 .adress:focus,
-.adress-item:hover,
-.adress-item:focus  {
+.auth-mail:hover,
+.auth-mail:focus,
+.auth-tel:hover,
+.auth-tel:focus   {
     color: var(--accent-color);
 }
 
-.site-nav .link.current {
-    color: var(--accent-color);
+.auth-nav {
+    display: flex;
+    margin-left: auto;
+}
+
+.auth-nav .item:not(:last-child) {
+    margin-right: 50px;
 }
 
 .auth-nav .link {
@@ -78,31 +133,33 @@ body {
     letter-spacing: 0.02em;
 }
 
-.auth-nav .link:hover,
-.auth-nav .link:focus {
-    color: var(--accent-color);
-}
-
 /* hero */
 
 .hero {
+    margin-bottom: 94px;
     background-color: var(--footer-background-color);
+    text-align: center;
 }
 
 .hero-title {
+    margin-bottom: 30px;
     color: var(--white-color);
 
     font-weight: 900;
     font-size: 44px;
     line-height: 1.36;
     letter-spacing: 0.06em;
-    text-align: center;
     text-transform: uppercase;
 }
 
 /* feature */
 
+.section {
+    margin-bottom: 94px;
+}
+
 .section-title {
+    margin-bottom: 50px;
     color: var(--title-text-color);
 
     font-weight: 700;
@@ -111,7 +168,21 @@ body {
     text-align: center;
 }
 
+.feature-list {
+    display: flex;
+}
+
+.feature-item {
+    width: 270px;
+}
+
+.feature-item:not(:last-child) {
+    margin-right: 30px;
+
+}
+
 .feature-list .title {
+    margin-bottom: 10px;
     color: var(--title-text-color);
 
     font-weight: 700;
@@ -120,9 +191,34 @@ body {
     text-transform: uppercase;
 }
 
-/* our team */
+/* Work */
+
+.work-list {
+    display: flex;
+}
+
+.work-item:not(:last-child) {
+    margin-right: 30px;
+}
+
+/* Our team */
+
+.section-team {
+    padding-top: 94px;
+    padding-bottom: 94px;
+    background-color: var(--background-grey-color);
+}
+
+.team-list {
+    display: flex;
+}
+
+.team-item:not(:last-child) {
+    margin-right: 30px;
+}
 
 .team-list .title {
+    margin-bottom: 10px;
     color: var(--title-text-color);
 
     font-weight: 500;
@@ -135,21 +231,27 @@ body {
     line-height: 1.19;
 }
 
-.team {
-    background-color: var(--background-grey-color);
+.team-list .image {
+    margin-bottom: 30px;
 }
 
 /* button */
 .button {
+    border-radius: 4px;
     color: var(--title-text-color);
     background-color: var(--white-color);
 
     font-family: inherit;
 
     cursor: pointer;
+    text-align: center;
+    border: none;
 }
 
 .button.primary {
+    padding: 10px 32px;
+    min-width: 216px;
+
     color: var(--white-color);
     background-color: var(--accent-color);
 
@@ -158,7 +260,16 @@ body {
     line-height: 1.88;
     text-align: center;
 }
+
+.button.primary:hover,
+.button.primary:focus {
+    color: var(--white-color);
+    background-color: var(--background-active-button);
+}
+
 .button.secondary {
+    padding: 6px 25px;
+
     color: var(--title-text-color);
     background-color: var(--background-grey-color);
 
@@ -180,6 +291,8 @@ body {
 }
 
 .logo-footer {
+    display: block;
+    margin-bottom: 10px;
     color: var(--white-color);
 
     font-family: 'Raleway', sans-serif;
@@ -189,17 +302,59 @@ body {
 }
 
 .adress {
+    display: block;
+    margin-bottom: 9px;
     color: var(--white-color);
     font-style: normal;
 }
 
-.adress-item {
+.auth-item {
+    margin-bottom: 9px;
+}
+
+.auth-mail,
+.auth-tel {
     color: var(--black-opacity-color);
 }
 
 /* CSS styles for portfolio.html */
 
+/* Filtr section */
+
+.filtr-list {
+    display: flex;
+    justify-content: center;
+}
+
+.filtr-item:not(:last-child) {
+    margin-right: 8px;
+}
+
+/* Projects section */
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.projects-item {
+    width: 370px;
+}
+
+.projects-item:not(:nth-child(3n)) {
+    margin-right: 30px;
+}
+
+.projects-item:not(:nth-last-child(-n+3)) {
+    margin-bottom: 30px;
+}
+
+.projects-image {
+    margin-bottom: 20px;
+}
+
 .projects-title {
+    margin-bottom: 4px;
     color: var(--title-text-color);
 
     font-weight: 700;
