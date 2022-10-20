@@ -285,9 +285,16 @@ img {
 }
 
 /* footer */
+
 .page-footer {
+    
     color: var(--white-color);
     background-color: var(--footer-background-color);
+}
+
+.section-footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .logo-footer {
